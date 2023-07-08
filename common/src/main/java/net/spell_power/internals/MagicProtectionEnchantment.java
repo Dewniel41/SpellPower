@@ -34,10 +34,10 @@ public class MagicProtectionEnchantment extends ProtectionEnchantment {
 
     @Override
     public int getProtectionAmount(int level, DamageSource source) {
-        if (source.getSource().equals(DamageTypes.OUT_OF_WORLD)) {
+        if (source.getType().equals(DamageTypes.OUT_OF_WORLD)) {
             return 0;
         }
-        if (source.getSource().equals(DamageTypes.MAGIC)) {
+        if (source.getType().equals(DamageTypes.MAGIC)) {
             return Math.round((float)level * config.bonus_per_level);
         }
         return 0;
